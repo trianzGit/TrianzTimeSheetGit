@@ -1,0 +1,57 @@
+<ion-view view-title="Dashboard" cache-view="false">
+<ion-header-bar align-title="left" class="bar-custom dashboard-header">
+  <div class="app-sprite appsprite-item-logo" >
+  </div>
+  <h1 class="title">Trianz App Store</h1>
+    <div class="buttons">
+  <button class="button ion-log-out button-clear logout-btn footer-refresh" ng-click = "logoutFromDashBoard()"></button>
+  </div>
+ <!--  <div class="buttons">
+    <button class="button">Right Button</button>
+  </div> -->
+</ion-header-bar>
+  <ion-content class="dashboard-content">
+  <div class="custom_emptyMessage display-none" id="emptyMsgDashboard">
+  <b>{{emptyMessage}}</b>
+  </br>
+  <!-- <button class="ion-loop button icon-left button-positive refresh-btn" ng-click="doRefresh()">Check for updates</button> -->
+  </div>
+  <ion-list type="list-inset" class="dashboard-list">  
+    <ion-item ng-click = "loadTimesheet()" ng-show="timesheet">
+          <div class="item-icon-left">
+          <i class="icon app-sprite ion-email appsprite-item-timesheet"></i>
+          <h2>Timesheet</h2>
+          <p>Application to approve employee timesheets.</p>
+          </div>
+          <div class="item-icon-right">
+          <i class="icon ion-chevron-right"></i>
+          </div>
+        </ion-item>
+     <ion-item ng-click= "loadEmployeeSkills()" ng-show="skills">
+          <div class="item-icon-left">
+          <i class="icon app-sprite ion-email appsprite-item-skills"></i>
+          <h2>Employee Skills</h2>
+          <p>Application to approve all human resources.</p>
+          </div>
+          <div class="item-icon-right">
+          <i class="icon ion-chevron-right"></i>
+          </div>
+        </ion-item>
+
+      <ion-item ng-click= "loadHRRFApprovals()" ng-show="tr">
+          <div class="item-icon-left">
+          <i class="icon app-sprite ion-email appsprite-item-operations"></i>
+          <h2>Trainz Operations</h2>
+          <p>Application to approve TRs .</p>
+          </div>
+          <div class="item-icon-right">
+          <i class="icon ion-chevron-right"></i>
+          </div>
+        </ion-item>
+
+  </ion-list>
+    
+  </ion-content> 
+   <ion-footer-bar align-title="left" class="bar-assertive app-footer">
+  </ion-footer-bar>  
+</ion-view>

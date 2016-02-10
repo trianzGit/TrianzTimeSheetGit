@@ -1,0 +1,71 @@
+<ion-view view-title="Pending For Approval" cache-view="false">
+  <ion-content>
+<ion-refresher pulling-text="Pull to refresh" on-refresh="doRefresh()">
+    </ion-refresher> 
+        <!--  <ion-item ng-repeat="tsListItem in tsList" >
+        <div>{{tsListItem.EmployeeName}} ({{tsListItem.EmployeeId}})</div>
+        <div>{{tsListItem.fromDateStr | date:'MM/dd/yyyy'}}  -  {{tsListItem.toDateStr | date:'MM/dd/yyyy'}} </div>
+        <div><b>{{tsListItem.TotalHours}} hrs</b></div>       	
+       	<div class="approve-btn ion-checkmark-circled" </div>
+        <div class="reject-btn ion-ios-close" </div>
+        
+      </ion-item> -->
+			<div class="custom_emptyMessage display-none " id="emptyMsg">
+        <b>{{emptyMessage}}</b>
+      </br>
+        <button class="ion-loop button icon-left button-positive refresh-btn" ng-click="doRefresh()">Check for updates</button>
+      </div>
+
+
+      <ion-list>
+        <div ng-repeat="tsListItem in tsList">
+          <ion-item class="item-stable"
+                    ng-click="toggleGroup(tsListItem)"
+                    ng-class="{active: isGroupShown(tsListItem)}">
+              <i class="icon" ng-class="isGroupShown(tsListItem) ? 'ion-minus' : 'ion-plus'"></i>
+            &nbsp;
+            <b>{{tsListItem.EmployeeName}} ({{tsListItem.EmployeeId}})</b>
+          </ion-item>
+          <ion-item class="item-accordion"             
+                    ng-show="isGroupShown(tsListItem)">
+            <div class="accordion-content">
+                <div>Date : {{tsListItem.fromDateStr | date:'MM/dd/yyyy'}}  -  {{tsListItem.toDateStr | date:'MM/dd/yyyy'}} </div>
+                <div>Project code : {{ProjectCode}}</div>
+                <div>Timesheet Comments : {{TimesheetComments}}</div>
+              <!--   //Add -->
+            </div>
+            <div class="total-hrs">Total effort : <span class="hrs-val">{{tsListItem.TotalHours}} hrs</span></div>   
+            <table class="btn-table">
+              <tr>
+                <td> <button class="button button-clear button-balanced  icon-left ion-checkmark" ng-click=approveTimesheet({{tsListItem.TimesheetID}})>Approve</button>  </td>
+                <td> <button class="button button-clear  button-assertive  icon-left ion-close" ng-click =rejectTimesheet({{tsListItem.TimesheetID}})>Reject</button>  </td>
+              </tr>
+            </table>
+           
+
+
+          </ion-item>
+        </div>
+      </ion-list>
+
+
+
+
+
+
+  </ion-content>
+
+  <ion-footer-bar align-title="left" class="bar-assertive app-footer">
+  <div class="buttons">
+  <!-- <button class="button">Left Button</button> -->
+  </div>
+  <h1 class="title"></h1>
+  <div class="buttons " ng-click="doRefresh()">
+  <button class="button ion-loop button-clear footer-refresh"></button>
+  </div>
+  </ion-footer-bar> 
+
+</ion-view>
+
+
+

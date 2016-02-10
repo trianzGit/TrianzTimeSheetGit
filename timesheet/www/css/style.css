@@ -1,0 +1,252 @@
+/* Empty. Add your own CSS if you like */
+
+.app-sprite {
+  background: url("../img/app-sprite.png") no-repeat; 
+ /* background-size: 100% 100%; */
+}
+.ion-email:before {
+ content: none;
+}
+.appsprite-item-logo {
+  height: 40px;
+  width: 46px;
+  background-position: 4px 0px;
+  margin-left: 8px;
+}
+.ion-email.appsprite-item-timesheet{
+  height: 45px;
+  width: 32px;
+  background-position: -40px 6px;
+  margin-top: 2%;
+}
+.ion-email.appsprite-item-operations{
+  height: 45px;
+  width: 32px;
+  background-position: -2px -32px;
+  margin-top: 2%;
+}
+.ion-email.appsprite-item-skills {
+    height: 45px;
+    width: 32px;
+    background-position: -71px -34px;
+    margin-top: 2%;
+    margin-left: 5px;
+}
+.dashboard-list .item {
+  margin: 0% 1% 3% 1%;
+}
+.dashboard-list .item .item-icon-left {
+  padding-left: 38px;
+}
+.bar-header {
+  height:50px;
+}
+.user-name {
+	width: 65%;
+    display: inline-block;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    margin-left: 1em;
+    color: #fff;
+    margin-bottom: 0;
+}
+.user-email {
+	margin-left: 1em;
+	width: 100%;
+
+}
+.logout-icon {
+	position: absolute;
+    right: 5%;
+    font-size: 20px;
+    top: 25%;
+}
+.approve-btn.ion-checkmark-circled{
+    position: absolute;
+    right: 25px;
+    top: 20px;
+    font-size: 35px;
+    color: orange;
+}
+.reject-btn.ion-ios-close{
+    position: absolute;
+    right: 55px;
+    top: 1px;
+    font-size: 35px;
+    color: red;
+}
+.login-content.scroll-content{
+    background: url("../img/Login-screen-bg.jpg") no-repeat center center fixed; 
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    background-size: cover;
+
+}
+.background_image
+{
+    background: url("../img/Login-screen-bg.jpg") no-repeat center center fixed; 
+    -webkit-background-size: 100% 100%;
+    -moz-background-size: 100% 100%;
+   background-size: 100% 100%;
+	height:100%;
+}
+
+#userNameId{
+   /* margin-top: 75%;*/
+	color:#C0C0C0 !important;
+}
+#passwordId{
+	margin-top: 7%;
+	color:#C0C0C0;
+	
+}
+
+.user-form {
+    position: absolute;
+   /* top: 38%;*/
+    margin-left: 0;
+    left: 0;
+    right: 0;
+    margin-right: 0;
+    padding: 5%;
+}
+
+
+#loginBtnId{
+	margin-top: 7%;
+	background-color: #EE760D !important;
+	border-color: #EE760D;
+}
+.custom_input .item.item-input
+{
+	background-color: #2e7583;
+    border: none;
+    color: #fff;
+    border-bottom: 1px solid #ddd;
+}
+.custom_input
+{
+	padding-left:20px;
+	padding-right:20px;
+}
+table.btn-table {
+    width: 100%;
+    margin: 5px 0 ;
+}
+table.btn-table td {
+    width: 50%;
+    text-align: center;
+}
+
+/*//Accordion list*/
+.list .item.item-accordion {
+  line-height: 26px;
+  padding-top: 0;
+  padding-bottom: 0;
+  transition: 0.09s all linear;
+}
+.list .item.item-accordion.ng-hide {
+  line-height: 0px;
+}
+.list .item.item-accordion.ng-hide-add,
+.list .item.item-accordion.ng-hide-remove {
+  display: block !important;
+}
+.accordion-content {
+    color: #2e7583;
+}
+.total-hrs {
+   color: #2e7583;
+    text-align: center;  
+    font-weight: bold;
+    border: 1px solid #ddd;
+    padding-top: 2px;
+}
+.hrs-val {
+    font-size: 25px;  
+}
+.custom_emptyMessage
+{
+	color:#2e7583;
+	text-align:center;
+	
+	font-size:18px;
+}
+.margin-top {
+   margin-top:10px; 
+}
+.display-none {
+    display: none !important;
+}
+.display-block {
+    display: block !important;
+}
+.refresh-btn {
+    margin-top: 20px;
+}
+/*//Footer Styles*/
+.footer-refresh {
+    color: #fff;
+}
+button.ion-loop.button-clear.footer-refresh {
+    font-size: 35px;
+    padding-right: 20%;
+}
+
+.login-screen .scroll-content {
+  display: table !important;
+  width: 100% !important;
+  height: 100% !important;
+}
+.login-screen .scroll {
+  display: table-cell;
+  vertical-align: middle;
+  text-align: center;
+}
+.login-screen .col-center {
+    margin-top: 20%;
+}
+
+
+.left-checkbox.item-checkbox {
+  padding-left: 0;
+}
+
+.left-checkbox.item-checkbox .checkbox {
+  right: auto;
+}
+
+.left-checkbox.item-checkbox .input-label {
+  padding-left: 60px;
+}
+
+.bar-stable .button.button-clear {
+  color: #fff;
+}
+
+
+.content-table {
+  width: 90%;
+  margin: 5% 0;
+
+}
+.content-table tbody{
+  white-space:normal;
+
+}
+
+.content-table .td_css
+{
+  border: 1px solid black;
+  font-size: 12px;
+  text-align: center;
+}
+.margin-topDashboard
+{
+  margin-top: 20px;
+}
+.bar .button.button-clear.logout-btn {
+  font-size: 2em;
+  color: #fff;
+}

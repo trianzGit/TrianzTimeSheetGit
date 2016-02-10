@@ -1,0 +1,63 @@
+<ion-view view-title="Employee Skills" cache-view="false">
+  <ion-content>
+ <ion-refresher pulling-text="Pull to refresh" on-refresh="doRefreshEmployeeSkills()">
+    </ion-refresher>       
+			<div class="custom_emptyMessage display-none " id="emptyMsg">
+        <b>{{emptyMessage}}</b>
+      </br>
+        <button class="ion-loop button icon-left button-positive refresh-btn" ng-click="doRefreshEmployeeSkills()">Check for updates</button>
+      </div>
+
+
+      <ion-list>
+        <div ng-repeat="tsListItem in tsList.GetAllEmpSkillsListForManagerApprovalResult.EmpSkillResponseList">
+          <ion-item class="item-stable"
+                    ng-click="toggleGroup(tsListItem)"
+                    ng-class="{active: isGroupShown(tsListItem)}">
+              <i class="icon" ng-class="isGroupShown(tsListItem) ? 'ion-minus' : 'ion-plus'"></i>
+            &nbsp;
+            <b>{{tsListItem.EmployeeName}} ({{tsListItem.EmployeeId}})</b>
+          </ion-item>
+          <ion-item class="item-accordion"             
+                    ng-show="isGroupShown(tsListItem)">
+            <div class="accordion-content">
+                <div>Primary : {{tsListItem.IsPrimary}} </div>
+                <div>Status : {{tsListItem.Status}}</div>
+              <!--   //Add -->
+            </div>
+           
+            <table class="btn-table">
+              <tr>
+                <td> <button class="button button-outline button-balanced " ng-click=viewEmployeeSkills({{tsListItem.EmployeeId}})>View details</button>  </td>
+               <!--  <td> <button class="button button-clear button-balanced  icon-left ion-checkmark" ng-click=approveTimesheet({{tsListItem.TimesheetID}})>Approve</button>  </td>
+                <td> <button class="button button-clear  button-assertive  icon-left ion-close" ng-click =rejectTimesheet({{tsListItem.TimesheetID}})>Reject</button>  </td> -->
+              </tr>
+            </table>
+          
+
+
+          </ion-item>
+        </div>
+      </ion-list>
+
+
+
+
+
+
+  </ion-content>
+
+  <ion-footer-bar align-title="left" class="bar-assertive app-footer">
+  <div class="buttons">
+  <!-- <button class="button">Left Button</button> -->
+  </div>
+  <h1 class="title"></h1>
+  <div class="buttons " ng-click="doRefreshEmployeeSkills()">
+  <button class="button ion-loop button-clear footer-refresh"></button>
+  </div>
+  </ion-footer-bar> 
+
+</ion-view>
+
+
+

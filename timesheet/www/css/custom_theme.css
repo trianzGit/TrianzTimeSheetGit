@@ -1,0 +1,47 @@
+.bar.bar-custom, bar.bar-custom .bar.bar-positive, .bar-custom .nav-bar-block ion-header-bar,
+.bar.bar-stable, .bar-assertive.app-footer{
+    border-color: #2e7583;
+    background-color: #2e7583;
+    background-image: linear-gradient(0deg, #2e7583, #2e7583 50%, transparent 50%);
+     color: #fff;
+
+}
+.bar.bar-assertive.bar-footer {
+	background-image: linear-gradient(180deg, #2e7583, #2e7583 50%, transparent 50%);
+}
+.bar.bar-stable .title, .bar-stable .button.button-icon {
+    color: #fff;
+}
+.loading-container .loading {
+	background-color: none !important;
+}
+.login-screen.pane {
+	 background-color: #2e7583;
+}
+.dashboard-list h2 {
+	 color: #2e7583;
+	 font-weight: bold;
+}
+.dashboard-list p {
+	color : #9b9b9b;
+	padding-right: 10px;
+	width: 90%;
+}
+.dashboard-content.scroll-content, .dashboard-content .list {
+	background-color: #f4f4f4 ;
+}
+.ion-chevron-right:before {
+	color: #d2d2d2;
+}
+.dashboard-header h1 {
+	color: #fff;
+}
+.checkbox input:checked:before, .checkbox input:checked + .checkbox-icon:before {
+	background: #e16826;
+	border-color: #e16826;
+}
+.checkbox input:before, .checkbox-icon:before {
+	border-width: 2px;
+	border-color: #D4CCCC;
+}
+ 

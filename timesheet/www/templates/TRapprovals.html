@@ -1,0 +1,127 @@
+<ion-view view-title="Talent Requisition" cache-view="false">
+  <ion-content>
+<ion-refresher pulling-text="Pull to refresh" on-refresh="doRefresh()">
+    </ion-refresher> 
+        <!--  <ion-item ng-repeat="tsListItem in tsList" >
+        <div>{{tsListItem.EmployeeName}} ({{tsListItem.EmployeeId}})</div>
+        <div>{{tsListItem.fromDateStr | date:'MM/dd/yyyy'}}  -  {{tsListItem.toDateStr | date:'MM/dd/yyyy'}} </div>
+        <div><b>{{tsListItem.TotalHours}} hrs</b></div>       	
+       	<div class="approve-btn ion-checkmark-circled" </div>
+        <div class="reject-btn ion-ios-close" </div>
+        
+      </ion-item> -->
+			<div class="custom_emptyMessage display-none " id="emptyMsg">
+        <b>{{emptyMessage}}</b>
+      </br>
+        <button class="ion-loop button icon-left button-positive refresh-btn" ng-click="doRefresh()">Check for updates</button>
+      </div>
+
+
+      <ion-list>
+        <div ng-repeat="tsListItem in tsList">
+          <ion-item class="item-stable"
+                    ng-click="toggleGroup(tsListItem)"
+                    ng-class="{active: isGroupShown(tsListItem)}">
+              <i class="icon" ng-class="isGroupShown(tsListItem) ? 'ion-minus' : 'ion-plus'"></i>
+            &nbsp;
+            <b>{{tsListItem.ProjectName}} ({{tsListItem.HRRFNumber}})</b>
+          </ion-item>
+          <ion-item class="item-accordion"             
+                    ng-show="isGroupShown(tsListItem)">
+            <div class="accordion-content">
+            <!--   <div>Practice : {{tsListItem.Practice}}</div>
+              <div>Role required: {{tsListItem.Role}}</div>
+              <div>Grade : {{tsListItem.Grade}}</div>
+              <div>Requested By : {{tsListItem.RequestedBy}}</div>
+              <div>Date : {{tsListItem.RequestedDateStr | date:'MM/dd/yyyy'}} , SUb:{{tsListItem.HRRFSubmitedDateStr | date:'MM/dd/yyyy'}}</div> -->
+
+
+              <table class="content-table">
+              <tr>
+                <td  class="td_css">Project Name</td>
+                <td class="td_css"> &nbsp;{{tsListItem.ProjectName}}&nbsp; </td>
+              </tr>
+              <tr>
+                <td  class="td_css">Request Type</td>
+                <td class="td_css"> &nbsp;{{tsListItem.HRRF.RequestType}}&nbsp; </td>
+              </tr>
+              <tr>
+                <td  class="td_css">Assignment Start Date</td>
+                <td class="td_css"> &nbsp;{{tsListItem.RequestedDateStr2 | date:'MM/dd/yyyy'}}&nbsp; </td>
+              </tr>
+              <tr>
+                <td class="td_css">Assignment End Date</td>
+                <td class="td_css"> &nbsp;{{tsListItem.RequestedDateStr3 | date:'MM/dd/yyyy'}}&nbsp; </td>
+              </tr>
+              <tr>
+                <td  class="td_css">Client Interview</td>
+                <td class="td_css"> &nbsp;{{tsListItem.HRRF.ClientInterview}}&nbsp; </td>
+              </tr>
+             <tr>
+                <td  class="td_css">Enagagement Type</td>
+                <td class="td_css"> &nbsp;{{tsListItem.HRRF.EnagagementType}}&nbsp; </td>
+              </tr>
+              <tr>
+                <td  class="td_css">Location</td>
+                <td class="td_css"> &nbsp;{{tsListItem.HRRF.OffshoreLocation}}&nbsp; </td>
+              </tr>
+               <tr>
+                <td  class="td_css">Role required</td>
+                <td class="td_css"> &nbsp;{{tsListItem.HRRF.RoleRequired}}&nbsp; </td>
+              </tr>
+              <tr>
+                <td  class="td_css">Grade</td>
+                <td class="td_css"> &nbsp;{{tsListItem.Grade}}&nbsp; </td>
+              </tr>
+              <tr>
+                <td  class="td_css">Requested By</td>
+                <td class="td_css"> &nbsp;{{tsListItem.RequestedBy}}&nbsp; </td>
+              </tr>
+            </table>
+
+
+
+
+
+
+
+            </div>
+            <table class="btn-table">
+              <tr>
+                <td> <button class="button button-clear button-balanced  icon-left ion-checkmark" ng-click=acceptHRRFRequest("{{tsListItem.HRRFNumber}}")>Approve</button>  </td>
+                <td> <button class="button button-clear  button-assertive  icon-left ion-close" ng-click =rejectHRRFRequest({{"tsListItem.HRRFNumber"}})>Reject</button>  </td>
+              </tr>
+            </table>
+           
+
+
+          </ion-item>
+        </div>
+      </ion-list>
+
+
+
+    
+    <script id="popup-template.html" type="text/ng-template">
+      <h3>Reject Request</h3>
+      <div>Remarks:</div>
+      <input type="text" ng-model="remark.text" name="remark" required>
+    </script>
+
+
+  </ion-content>
+
+  <ion-footer-bar align-title="left" class="bar-assertive app-footer">
+  <div class="buttons">
+  <!-- <button class="button">Left Button</button> -->
+  </div>
+  <h1 class="title"></h1>
+  <div class="buttons " ng-click="doRefresh()">
+  <button class="button ion-loop button-clear footer-refresh"></button>
+  </div>
+  </ion-footer-bar> 
+
+</ion-view>
+
+
+
